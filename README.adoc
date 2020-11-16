@@ -17,7 +17,7 @@ In this virtual hands-on workshop, you will build a real workflow for an **IoT P
 * Turn Off Your Corporate VPN
 * Use a personal laptop if possible
 * You will be connecting to an Amazon IP or Domain with many web ports hosted on AWS
-* Get your IP with http://icanhazip.com/
+
 
 === Connecting to your cluster
 
