@@ -7,7 +7,7 @@ In this virtual hands-on workshop, you will build a real workflow for an **IoT P
 === Before you start
 
 * Everything is Case-Sensitive. 
-* Check all your connections and spellings
+* Check all your connections and spellings. Be very aware of whitespaces when you copy text.
 
 
 === Pre-requisites
@@ -56,7 +56,9 @@ image::images/cfmreferencearch.png[width=800]
 == Lab 1 - Configuring the NiFi flow and pushing data to Kafka
 
 
-In this lab you will run a simple Python script that simulates IoT sensor data from some hypothetical machines, and send the data to a MQTT broker (link:https://mosquitto.org/[mosquitto]). The MQTT broker plays the role of a gateway that is connected to many and different type of sensors through the "mqtt" protocol. Your cluster comes with an embedded MQTT broker that the simulation script publishes to. For convenience, we will use NiFi to run the script rather than Shell commands.
+In this lab you will run a simple Python script that simulates IoT sensor data from some hypothetical machines, and send the data to a MQTT broker (link:https://mosquitto.org/[mosquitto]). The MQTT broker plays the role of a 
+
+that is connected to many and different type of sensors through the "mqtt" protocol. Your cluster comes with an embedded MQTT broker that the simulation script publishes to. For convenience, we will use NiFi to run the script rather than Shell commands.
 
 . Go to Apache NiFi and add a Processor (ExecuteProcess) to the canvas.
 +
@@ -271,11 +273,11 @@ image::images/terminate_publishkafka_relationship.png[width=600]
 +
 image::images/publishKafka_flow.png[width=800]
 
-. The only thing that remains to be configured now is to finally connect the "*from Gateway*" Input Port to the flow in the "*Processor Sensor Data*" group. To do that, first go back to the root canvas by clicking on the *NiFi Flow* link on the status bar.
+. The only thing that remains to be configured now is to finally connect the "*ExecuteProcess*" processor to the flow in the "*Processor Sensor Data*" group. To do that, first go back to the root canvas by clicking on the *NiFi Flow* link on the status bar.
 +
 image::images/breadcrumbs.png[width=400]
 
-. Connect the Input Port to the *Process Sensor Data* Process Group by dragging the destination of the current connection from the funnel to the Process Group. When prompted, ensure the "To input" fields is set to the *Sensor data* Input Port. 
+. Connect the"*ExecuteProcess*" processor to the *Process Sensor Data* Process Group by dragging from the processor to the Process Group. When prompted, ensure the "To input" fields is set to the *Sensor data* Input Port. 
 +
 image::images/connect_input.png[width=800]
 +
